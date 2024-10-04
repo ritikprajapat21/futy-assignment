@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Card from "./card";
 
 const Completed = () => {
+  // @ts-ignore
   const { completed } = useLoaderData();
 
   return (

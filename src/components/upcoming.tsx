@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Card from "./card";
 
 const Upcoming = () => {
+  // @ts-ignore
   const { upcoming } = useLoaderData();
 
   return (
