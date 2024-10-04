@@ -25,12 +25,12 @@ const Card = ({
           </span>
         </div>
         <div className="flex items-center justify-center text-sm gap-3 pb-2">
-          <span>{home_team}</span>
+          <span className="font-bold">{home_team}</span>
           <div className="flex flex-col items-center">
             <span className="text-xs text-[#9B9B9B]">{date}</span>
-            <span className="font-bold">{time}</span>
+            <span className="font-semibold">{time}</span>
           </div>
-          <span>{away_team}</span>
+          <span className="font-bold">{away_team}</span>
         </div>
         <hr className="w-full bg-white" />
         <div className="flex justify-center p-2">
