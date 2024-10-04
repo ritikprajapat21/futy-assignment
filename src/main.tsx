@@ -7,6 +7,10 @@ import User from "./user.tsx";
 import Coins from "./coins.tsx";
 import Score from "./score.tsx";
 import Options from "./components/options.tsx";
+import { completedLoader, liveLoader, upcomingLoader } from "./lib/loader.ts";
+import Live from "./components/live.tsx";
+import Completed from "./components/completed.tsx";
+import Upcoming from "./components/upcoming.tsx";
 
 const router = createBrowserRouter([
   {
@@ -17,9 +21,13 @@ const router = createBrowserRouter([
         path: "/",
         element: <Options />,
         children: [
-          { path: "/live", element: <div>Live</div> },
-          { path: "/completed", element: <div>Completed</div> },
-          { path: "/", element: <div>Upcoming</div> },
+          { path: "/live", loader: liveLoader, element: <Live /> },
+          {
+            path: "/completed",
+            loader: completedLoader,
+            element: <Completed />,
+          },
+          { path: "/", loader: upcomingLoader, element: <Upcoming /> },
         ],
       },
       { path: "/profile", element: <User /> },
