@@ -14,25 +14,33 @@ import Upcoming from "./components/upcoming.tsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "futy-assignment/",
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "futy-assignment/",
         element: <Options />,
         children: [
-          { path: "/live", loader: liveLoader, element: <Live /> },
           {
-            path: "/completed",
+            path: "futy-assignment/live",
+            loader: liveLoader,
+            element: <Live />,
+          },
+          {
+            path: "futy-assignment/completed",
             loader: completedLoader,
             element: <Completed />,
           },
-          { path: "/", loader: upcomingLoader, element: <Upcoming /> },
+          {
+            path: "futy-assignment/",
+            loader: upcomingLoader,
+            element: <Upcoming />,
+          },
         ],
       },
-      { path: "/profile", element: <User /> },
-      { path: "/score", element: <Score /> },
-      { path: "/coins", element: <Coins /> },
+      { path: "futy-assignment/profile", element: <User /> },
+      { path: "futy-assignment/score", element: <Score /> },
+      { path: "futy-assignment/coins", element: <Coins /> },
     ],
   },
 ]);
